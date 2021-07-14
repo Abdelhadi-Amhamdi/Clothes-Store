@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CLOTHSEY.</title>
+    <link rel="stylesheet" href="./assets/main.css" />
+    <link rel="stylesheet" href="./assets/style/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/style/owl.carousel.min.css" />
+    <link rel="stylesheet" href="./assets/style/owl.theme.default.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="warning">
+      <h1>الاصدار الخاص بالحاسوب غير متوفر الان المرجو الدخول من الهاتف</h1>
+    </div>
+    <div class="background">
+      <div class="square">
+        <div class="search">
+          <form class="home-search">
+            <input type="search" placeholder="ابحث عن منتوجك المفضل" />
+          </form>
+        </div>
+        <img
+          src="./assets/images/Window Shopping-bro.svg"
+          loading="lazy"
+          class="bg-img"
+        />
+        
+        <div class="latest">
+          <div class="header">
+            <div class="btn see-all">الكل</div>
+            <h1>اخر الاضافات</h1>
+          </div>
+          <div class="cards owl-carousel owl-theme slider">
+            <div class="card item">
+              <img
+                class="card-img-top"
+                src="./assets/images/prods/1.jpg"
+                loading="lazy"
+              />
+              <div class="card-body">
+                <h4 class="card-title">T-shirt 1</h4>
+                <span class="time">35 DH</span>
+              </div>
+            </div>
+            <div class="card item">
+              <img
+                class="card-img-top"
+                src="./assets/images/prods/3.jpg"
+                loading="lazy"
+              />
+              <div class="card-body">
+                <h4 class="card-title">T-shirt 2</h4>
+                <span class="time">35 DH</span>
+              </div>
+            </div>
+            <div class="card item">
+              <img
+                class="card-img-top"
+                src="./assets/images/prods/4.jpg"
+                loading="lazy"
+              />
+              <div class="card-body">
+                <h4 class="card-title">T-shirt 3</h4>
+                <span class="time">35 DH</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="list-of-prods">
+        <div class="search">
+          <form class="all-home-search">
+            <input type="search" placeholder="ابحث عن منتوجك المفضل" />
+          </form>
+        </div>
+        <div class="slide">
+          <div class="ad">
+            <div class="row">
+              <div class="col-12 col-lg-12 col-md-12 col-sm-12 col-xl-12">
+                <img
+                  src="./assets/images/How to Create Your Own Indoor Jungle at Home.jpg"
+                  class="adImage"
+                  loading="lazy"
+                />
+                <div class="texts">
+                  <h2>50% Off </h2>
+                  <h6>Will be over soon Hurry Up</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="more">
+          <div class="header">
+            <h1>جميع المنتجات</h1>
+          </div>
+
+          <div class="row all-prods"></div>
+        </div>
+      </div>
+      <div class="shopping-card">
+        <div class="header">
+          <span class="card-part-icon"></span>
+          <h1>: سلة التسوق الخاصة بي</h1>
+        </div>
+
+        <ul class="list-of-items-card">
+          <li class="crd-vide">noting added yet</li>
+        </ul>
+        <div class="btn btn-block">اطلب الان</div>
+      </div>
+      <div class="list-of-favs">
+        <div class="header">
+          <span class="fav-part-icon"></span>
+          <h1>: قائمة المنتجات المفضلة</h1>
+        </div>
+        <ul class="list-favourits">
+          <li class="fv-vide">noting added yet</li>
+        </ul>
+      </div>
+      <div class="sent-order">
+        <div class="data">
+          <ul class="orders_list"></ul>
+          <div class="total"><span class="total-num"></span> DH = المجموع</div>
+        </div>
+        <form class="form-group">
+          <label>الاسم </label>
+          <input
+            type="text"
+            class="form-control username"
+            placeholder="Jhon Deuo"
+          />
+          <label>رقم الهاتف</label>
+          <label>العنوان</label>
+          <input
+            type="adresse"
+            class="form-control"
+            id="user-adresse"
+            placeholder="city / street "
+          />
+          <div class="btn btn-block btn-make-order">ارسال في واتساب</div>
+        </form>
+      </div>
+    </div>
+
+    <div class="nav">
+      <ul>
+        <li id="1">
+
+        </li>
+        <li id="2">
+
+        </li>
+        <li id="3" class="active"></li>
+        <li id="4">
+          <span class="cd-num-items"></span>
+        </li>
+        <li id="5">
+          <span class="fv-num-items"></span>
+        </li>
+      </ul>
+    </div>
+
+    <script src="./assets/theme.js"></script>
+    <script src="./assets/manage_data.js"></script>
+    <script src="./assets/scripts/bootstrap.min.js"></script>
+    <script src="./assets/scripts/jquery-3.3.1.min.js"></script>
+    <script src="./assets/scripts/owl.carousel.min.js"></script>
+    <script>
+      //story slider
+      $(".slider").owlCarousel({
+        loop: true,
+        margin: 5,
+        nav: false,
+        dots: false,
+        // autoplay: true,
+        // autoplayTimeout: 3000,
+        // smartSpeed: 1000,
+        // autoplayHoverPause: true,
+        responsive: {
+          0: {
+            items: 2.5,
+          },
+          600: {
+            items: 4,
+          },
+          1000: {
+            items: 6,
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
