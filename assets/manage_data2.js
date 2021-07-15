@@ -1,4 +1,6 @@
 const cats = document.querySelectorAll('.cat')
+const circles = document.querySelectorAll('.circle')
+const close_btn = document.querySelector('.close')
 
 cats.forEach(cat => {
     
@@ -21,4 +23,16 @@ cats.forEach(cat => {
     })
 })
 
+circles.forEach(size => {
+    size.addEventListener('click' , (e)=> {
+        circles.forEach(item => {
+            item.classList.remove('active')
+        })
+        e.target.classList.add('active')
+    })
+})
+
+close_btn.addEventListener('click' , ()=> {
+    display_section.style.display = "none"
+})
 

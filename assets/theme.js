@@ -117,6 +117,7 @@ function show_My_Card() {
     li.innerHTML = `
     <img src="${list_of_items_in_shoppin_card[i].img}" loading="lazy" />
     <h4>${list_of_items_in_shoppin_card[i].title}</h4>
+    <h4>${list_of_items_in_shoppin_card[i].size}</h4>
     <h5>${list_of_items_in_shoppin_card[i].price} DH</h5>
 
     <div class="rmv-btn-crd">X</div>

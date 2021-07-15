@@ -1,13 +1,14 @@
 const cards_section = document.querySelector(".all-prods");
 const form_search = document.querySelectorAll(".home-search");
 const btn_search = document.querySelector(".search-btn");
-const display_section = document.querySelector('.section-display-items')
+const display_section = document.querySelector(".section-display-items");
 
 let list_prods = [];
 let orders_data;
 let total = 0;
 let username;
 let adress;
+let data_item
 
 import("./data.js").then((res) => {
   list_prods = res.Prods;
@@ -28,19 +29,22 @@ import("./data.js").then((res) => {
   }
 
   const Add_to_favs_btns = document.querySelectorAll(".add-fv");
-  const Add_to_card_btns = document.querySelectorAll(".add-cd");
+  const Add_to_card_btn = document.querySelector(".icon");
   const see_items_btns = document.querySelectorAll(".see-item");
-
 
   see_items_btns.forEach((btn) => {
     btn.addEventListener("click", (e) => {
-      display_section.style.display = "block"
-      const item_index = e.target.parentElement.parentElement.parentElement.getAttribute('data-id')
-      const data_item = list_prods[Number(item_index)-1]
-      display_section.querySelector('img').setAttribute('src' , data_item.img)
-      display_section.querySelector('h5.title').innerText = data_item.title
-      display_section.querySelector('h5.price').innerHTML =  `${data_item.price} <span>DH</span>`
-
+      display_section.style.display = "block";
+      const item_index =
+        e.target.parentElement.parentElement.parentElement.getAttribute(
+          "data-id"
+        );
+      data_item = list_prods[Number(item_index) - 1];
+      display_section.querySelector("img").setAttribute("src", data_item.img);
+      display_section.querySelector("h5.title").innerText = data_item.title;
+      display_section.querySelector(
+        "h5.price"
+      ).innerText = `${data_item.price} DH`;
     });
   });
 
@@ -60,23 +64,23 @@ import("./data.js").then((res) => {
       fv_dot.innerText = fv_num;
     });
   });
-  Add_to_card_btns.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const crd = btn.parentElement.parentElement;
-      const img = crd.querySelector("img.card-img-top").src;
-      const title = crd.querySelector(".card-title").textContent;
-      const price = crd.querySelector(".prod-price").textContent;
-      const obg = {
-        img,
-        title,
-        price,
-      };
-      card.unshift(obg);
+  Add_to_card_btn.addEventListener("click", (e) => {
+    const crd = e.target.parentElement.parentElement.parentElement
+    const size = crd.querySelector('.sizes').querySelector('.circle.active').innerText
+    const img = data_item.img
+    const title = data_item.title
+    const price = data_item.price
+    const obg = {
+      img,
+      title,
+      price,
+      size
+    };
+    card.unshift(obg);
 
-      localStorage.setItem("card", JSON.stringify(card));
-      cd_num += 1;
-      cd_dot.innerText = cd_num;
-    });
+    localStorage.setItem("card", JSON.stringify(card));
+    cd_num += 1;
+    cd_dot.innerText = cd_num;
   });
 });
 
@@ -101,11 +105,8 @@ function setData(data) {
               <div class="btn add-fv">
                 ${IconsArray[2].icon}
               </div>
-              <div class="btn add-cd">
-                ${IconsArray[1].icon}
-              </div>
               <div class="btn see-item">
-                ${IconsArray[1].icon}
+                <i class="far fa-eye"></i>
               </div>
             </div>
             <img
@@ -123,7 +124,6 @@ function setData(data) {
           `;
     cards_section.append(card);
   }
-  
 }
 
 const order_section = document.querySelector(".sent-order");
