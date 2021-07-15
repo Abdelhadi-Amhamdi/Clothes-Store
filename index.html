@@ -21,6 +21,12 @@
       integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mada:wght@400;900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="warning">
@@ -38,7 +44,7 @@
           loading="lazy"
           class="bg-img"
         />
-        
+
         <div class="latest">
           <div class="header">
             <div class="btn see-all">الكل</div>
@@ -48,7 +54,7 @@
             <div class="card item">
               <img
                 class="card-img-top"
-                src="./assets/images/prods/1.jpg"
+                src="./assets/images/prods/men/1.jpg"
                 loading="lazy"
               />
               <div class="card-body">
@@ -59,7 +65,7 @@
             <div class="card item">
               <img
                 class="card-img-top"
-                src="./assets/images/prods/3.jpg"
+                src="./assets/images/prods/men/3.jpg"
                 loading="lazy"
               />
               <div class="card-body">
@@ -70,7 +76,7 @@
             <div class="card item">
               <img
                 class="card-img-top"
-                src="./assets/images/prods/4.jpg"
+                src="./assets/images/prods/men/4.jpg"
                 loading="lazy"
               />
               <div class="card-body">
@@ -97,8 +103,8 @@
                   loading="lazy"
                 />
                 <div class="texts">
-                  <h2>50% Off </h2>
-                  <h6>Will be over soon Hurry Up</h6>
+                  <h2>50% تخفيض</h2>
+                  <h6>اسرع الكمية محدودة و ستنفذ قريبا</h6>
                 </div>
               </div>
             </div>
@@ -109,7 +115,30 @@
             <h1>جميع المنتجات</h1>
           </div>
 
-          <div class="row all-prods"></div>
+          <div class="row all-prods">
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-2">
+                  <div class="cat" id="cat1">قميص</div>
+                </div>
+                <div class="col-2">
+                  <div class="cat" id="cat2">Tshirt</div>
+                </div>
+                <div class="col-2">
+                  <div class="cat" id="cat3">سروال</div>
+                </div>
+                <div class="col-2">
+                  <div class="cat" id="cat4">الرجال</div>
+                </div>
+                <div class="col-2">
+                  <div class="cat" id="cat5">النساء</div>
+                </div>
+                <div class="col-2">
+                  <div class="cat" id="cat6">الاطفال</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="shopping-card">
@@ -159,12 +188,8 @@
 
     <div class="nav">
       <ul>
-        <li id="1">
-
-        </li>
-        <li id="2">
-
-        </li>
+        <li id="1"></li>
+        <li id="2"></li>
         <li id="3" class="active"></li>
         <li id="4">
           <span class="cd-num-items"></span>
@@ -175,11 +200,55 @@
       </ul>
     </div>
 
+    <div class="section-display-items">
+      <div class="card">
+        <img class="card-img-top" src="" >
+        <div class="card-body">
+          <div class="infos">
+            <h5 class="title"></h5>
+            <h5 class="price"></h5>
+          </div>
+          <div class="sizes">
+            <div class="row">
+              <div class="col-12">
+                <div class="header">
+                  <h5>sizes</h5>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="row circles">
+                  <div class="col-2">
+                    <div class="circle active">M</div>
+                  </div>
+                  <div class="col-2">
+                    <div class="circle">L</div>
+                  </div>
+                  <div class="col-2">
+                    <div class="circle">S</div>
+                  </div>
+                  <div class="col-2">
+                    <div class="circle">XL</div>
+                  </div>
+                  <div class="col-2">
+                    <div class="circle">XXl</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button>
+            <div class="icon">add</div>
+          </button>
+        </div>
+      </div>
+    </div>
+
     <script src="./assets/theme.js"></script>
     <script src="./assets/manage_data.js"></script>
     <script src="./assets/scripts/bootstrap.min.js"></script>
     <script src="./assets/scripts/jquery-3.3.1.min.js"></script>
     <script src="./assets/scripts/owl.carousel.min.js"></script>
+    <script src="./assets/manage_data2.js"></script>
     <script>
       //story slider
       $(".slider").owlCarousel({
