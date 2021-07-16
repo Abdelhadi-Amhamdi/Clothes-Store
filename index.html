@@ -32,6 +32,20 @@
       <h1>الاصدار الخاص بالحاسوب غير متوفر الان المرجو الدخول من الهاتف</h1>
     </div>
     <div class="background">
+      <div class="sweet-alert">
+        <h6 class="content"></h6>
+        <div class="progress">
+          <div
+            class="progress-bar"
+            role="progressbar"
+            style="width: 25%"
+            aria-valuenow="25"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          >
+          </div>
+        </div>
+      </div>
       <div class="square">
         <div class="search">
           <form class="home-search" id="search-form">
@@ -204,7 +218,7 @@
         <i class="fas fa-chevron-left"></i>
       </div>
       <div class="card">
-        <img class="card-img-top" src="" >
+        <img class="card-img-top" src="" />
         <div class="card-body">
           <div class="infos">
             <h5 class="title"></h5>
@@ -248,34 +262,31 @@
     </div>
 
     <script src="./assets/app.js"></script>
-    <!-- <script src="./assets/scripts/bootstrap.min.js"></script> -->
     <script src="./assets/scripts/bootstrap.bundle.min.js"></script>
     <script src="./assets/scripts/jquery-3.3.1.min.js"></script>
     <script src="./assets/scripts/owl.carousel.min.js"></script>
     <script>
-
-$(".slider").owlCarousel({
-    loop: true,
-    margin: 5,
-    nav: false,
-    dots: false,
-    autoplay: true,
-    autoplayTimeout: 3000,
-    smartSpeed: 1000,
-    autoplayHoverPause: true,
-    responsive: {
-      0: {
-        items: 2.5
-      },
-      600: {
-        items: 4
-      },
-      1000: {
-        items: 5.5
-      }
-    }
-  });
-            
+      $(".slider").owlCarousel({
+        loop: true,
+        margin: 5,
+        nav: false,
+        dots: false,
+        autoplay: true,
+        autoplayTimeout: 3000,
+        smartSpeed: 1000,
+        autoplayHoverPause: true,
+        responsive: {
+          0: {
+            items: 2.5,
+          },
+          600: {
+            items: 4,
+          },
+          1000: {
+            items: 5.5,
+          },
+        },
+      });
     </script>
   </body>
 </html>

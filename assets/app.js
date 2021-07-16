@@ -16,6 +16,7 @@ const prods = document.querySelector(".list-of-prods");
 const cd_dot = document.querySelector(".cd-num-items");
 const fv_dot = document.querySelector(".fv-num-items");
 const circles = document.querySelectorAll(".circle");
+const alert = document.querySelector('.sweet-alert');
 const close_btn = document.querySelector(".close");
 const btnAll = document.querySelector(".see-all");
 const square = document.querySelector(".square");
@@ -93,7 +94,7 @@ function see_details(e) {
 
 // add products to favs list function
 function add_to_favs(btn) {
-  const crd = btn.target.parentElement.parentElement;
+  const crd = btn.target.parentElement.parentElement.parentElement;
   const img = crd.querySelector("img.card-img-top").src;
   const title = crd.querySelector(".card-title").textContent;
   const obg = {
@@ -105,6 +106,22 @@ function add_to_favs(btn) {
   localStorage.setItem("favs", JSON.stringify(favs));
   fv_num += 1;
   fv_dot.innerText = fv_num;
+  sweet_alert("لقد تمت اضافة المنتج الى قائمة المنتوجات المفضلة بنجاح")
+}
+
+// sweet alert function
+function sweet_alert(data){
+  alert.style.display = "block"
+  alert.querySelector('.progress-bar').style.width = "10%"
+  alert.querySelector('.content').innerText = data
+  const interval = setInterval(() => {
+    const bar = alert.querySelector('.progress-bar').style.width.replace('%' , '')
+    alert.querySelector('.progress-bar').style.width = Number(bar) + 2.5+'%'
+  }, 125);
+  setTimeout(() => {
+    alert.style.display = "none"
+    clearInterval(interval)
+  }, 5000);
 }
 
 // add product to shopping card function
@@ -127,6 +144,7 @@ function add_to_card(e) {
   localStorage.setItem("card", JSON.stringify(card));
   cd_num += 1;
   cd_dot.innerText = cd_num;
+  sweet_alert("لقد تمت اضافة المنتج الى سلة التسوق بنجاح")
 }
 
 // remove all products before setting new data
@@ -147,6 +165,7 @@ function setData(data) {
           <div class="card" data-id="${data[i].id}">
             <div class="btns">
               <div class="btn add-fv">
+                <i class="far fa-bookmark"></i>
               </div>
               <div class="btn see-item">
                 <i class="far fa-eye"></i>
