@@ -16,7 +16,7 @@ const prods = document.querySelector(".list-of-prods");
 const cd_dot = document.querySelector(".cd-num-items");
 const fv_dot = document.querySelector(".fv-num-items");
 const circles = document.querySelectorAll(".circle");
-const alert = document.querySelector('.sweet-alert');
+const alert = document.querySelector(".sweet-alert");
 const close_btn = document.querySelector(".close");
 const btnAll = document.querySelector(".see-all");
 const square = document.querySelector(".square");
@@ -84,6 +84,11 @@ function search(e) {
 // desplay the deatails of products function
 function see_details(e) {
   display_section.style.display = "block";
+  prods.style.display = "none";
+  shopping_card.style.display = "none";
+  favs_list.style.display = "none";
+  square.style.display = "none";
+  order_section.style.display = "none";
   const item_index =
     e.target.parentElement.parentElement.parentElement.getAttribute("data-id");
   data_item = list_prods[Number(item_index) - 1];
@@ -106,21 +111,23 @@ function add_to_favs(btn) {
   localStorage.setItem("favs", JSON.stringify(favs));
   fv_num += 1;
   fv_dot.innerText = fv_num;
-  sweet_alert("لقد تمت اضافة المنتج الى قائمة المنتوجات المفضلة بنجاح")
+  sweet_alert("لقد تمت اضافة المنتج الى قائمة المنتوجات المفضلة بنجاح");
 }
 
 // sweet alert function
-function sweet_alert(data){
-  alert.style.display = "block"
-  alert.querySelector('.progress-bar').style.width = "10%"
-  alert.querySelector('.content').innerText = data
+function sweet_alert(data) {
+  alert.style.display = "block";
+  alert.querySelector(".progress-bar").style.width = "10%";
+  alert.querySelector(".content").innerText = data;
   const interval = setInterval(() => {
-    const bar = alert.querySelector('.progress-bar').style.width.replace('%' , '')
-    alert.querySelector('.progress-bar').style.width = Number(bar) + 2.5+'%'
+    const bar = alert
+      .querySelector(".progress-bar")
+      .style.width.replace("%", "");
+    alert.querySelector(".progress-bar").style.width = Number(bar) + 2.5 + "%";
   }, 125);
   setTimeout(() => {
-    alert.style.display = "none"
-    clearInterval(interval)
+    alert.style.display = "none";
+    clearInterval(interval);
   }, 5000);
 }
 
@@ -144,7 +151,7 @@ function add_to_card(e) {
   localStorage.setItem("card", JSON.stringify(card));
   cd_num += 1;
   cd_dot.innerText = cd_num;
-  sweet_alert("لقد تمت اضافة المنتج الى سلة التسوق بنجاح")
+  sweet_alert("لقد تمت اضافة المنتج الى سلة التسوق بنجاح");
 }
 
 // remove all products before setting new data
@@ -294,7 +301,6 @@ cats.forEach((cat) => {
     Add_to_favs_btns.forEach((btn) => {
       btn.addEventListener("click", add_to_favs);
     });
-
   });
 });
 
@@ -311,6 +317,11 @@ circles.forEach((size) => {
 // hide the details section
 close_btn.addEventListener("click", () => {
   display_section.style.display = "none";
+  prods.style.display = "block";
+  shopping_card.style.display = "none";
+  favs_list.style.display = "none";
+  square.style.display = "none";
+  order_section.style.display = "none";
 });
 
 // shoping card and list of favs state
@@ -398,7 +409,6 @@ function switchNav(index, item = null) {
 
 // show shopping card section
 function show_My_Card() {
-
   // delete all last items in shopping card before seting new data
   const last = crd_ul.querySelectorAll("li");
   last.forEach((item) => {
@@ -414,7 +424,7 @@ function show_My_Card() {
 
   list_of_items_in_shoppin_card = JSON.parse(localStorage.getItem("card"));
 
-  // seting the data 
+  // seting the data
   for (let i = 0; i < list_of_items_in_shoppin_card.length; i++) {
     const li = document.createElement("li");
     li.setAttribute("class", "card-item");
@@ -460,7 +470,6 @@ function show_My_Card() {
 
 // display favourite items section
 function show_My_favs_List() {
-
   // delete all latest item before seting new data
   const last = fv_ul.querySelectorAll("li");
   last.forEach((item) => {
