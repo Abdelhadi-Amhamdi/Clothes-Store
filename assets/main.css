@@ -195,38 +195,27 @@ body {
     display: block;
   }
   .btns {
-    display: none;
     z-index: 5;
-    position: absolute;
+    position: relative;
     width: 50px;
-    right: -10px;
-    top: 65px;
+    left: 8px;
+    top: 27px;
   }
-  .btns .btn {
-    width: 30px !important;
+  .add-fav {
+    display: none;
+    width:fit-content !important;
     height: 30px;
     padding: 5px;
-    background-color: #574f4c;
-    border-radius: 50%;
-    display: flex;
     justify-content: center;
-    margin-top: 10px;
-    color: white;
-  }
-  .btn #Capa_1,
-  .btn i {
-    color: white;
-    width: 20px;
-    height: 20px;
+    color:#574f4c;
+    background: white;
+    border: 1px solid #574f4c !important;
+    position: absolute;
+    top: 50px;
+    left: 10px;
+    border-radius: 5px;
   }
 
-  .btns .btn img {
-    width: 20px;
-    height: 20px;
-    border: none;
-    background-color: transparent;
-    box-shadow: rgba(0, 0, 0, 0.267) 2px 2px 2px;
-  }
   .card img {
     height: 60%;
   }

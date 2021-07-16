@@ -26,6 +26,7 @@ const li = document.querySelectorAll("li");
 // global variables
 let list_of_items_in_shoppin_card;
 let list_of_favourits;
+let Add_to_favs_btns;
 let list_prods = [];
 let favs = [];
 let card = [];
@@ -60,12 +61,21 @@ import("./data.js").then((res) => {
     });
   });
 
-  const Add_to_favs_btns = document.querySelectorAll(".add-fv");
+  Add_to_favs_btns = document.querySelectorAll(".add-fv");
   // add product to favourits list
   Add_to_favs_btns.forEach((btn) => {
     btn.addEventListener("click", add_to_favs);
   });
 
+  const more_btn = document.querySelectorAll(".more-btn");
+  more_btn.forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      const button = e.target.parentElement.parentElement.querySelector('.add-fav')
+      button.style.display = "block";
+      button.addEventListener('click' , add_to_favs)
+    });
+  })
+  
   // add products to shopping card
   const Add_to_card_btn = document.querySelector(".icon");
   Add_to_card_btn.addEventListener("click", add_to_card);
@@ -90,7 +100,7 @@ function see_details(e) {
   square.style.display = "none";
   order_section.style.display = "none";
   const item_index =
-    e.target.parentElement.parentElement.parentElement.getAttribute("data-id");
+    e.target.parentElement.parentElement.getAttribute("data-id");
   data_item = list_prods[Number(item_index) - 1];
   display_section.querySelector("img").setAttribute("src", data_item.img);
   display_section.querySelector("h5.title").innerText = data_item.title;
@@ -99,6 +109,7 @@ function see_details(e) {
 
 // add products to favs list function
 function add_to_favs(btn) {
+  btn.target.style.display = "none"
   const crd = btn.target.parentElement.parentElement.parentElement;
   const img = crd.querySelector("img.card-img-top").src;
   const title = crd.querySelector(".card-title").textContent;
@@ -170,13 +181,11 @@ function setData(data) {
     card.setAttribute("class", "col-6 col-lg-6 col-md-6 col-sm-6 col-xl-6");
     card.innerHTML = `
           <div class="card" data-id="${data[i].id}">
-            <div class="btns">
-              <div class="btn add-fv">
-                <i class="far fa-bookmark"></i>
-              </div>
-              <div class="btn see-item">
-                <i class="far fa-eye"></i>
-              </div>
+            <div class="btns more-btn">
+              <i class="fas fa-ellipsis-v"></i>
+            </div>
+            <div class="add-fav">
+              save
             </div>
             <img
               class="card-img-top"
@@ -184,7 +193,7 @@ function setData(data) {
               loading="lazy"
             />
             <div class="card-body">
-              <h4 class="card-title">${data[i].title}</h4>
+              <h4 class="card-title see-item">${data[i].title}</h4>
               <p class="card-text">
               ${data[i].cat}<span class="prod-price">${data[i].price}</span>DH
               </p>
@@ -193,6 +202,7 @@ function setData(data) {
 
     cards_section.append(card);
   }
+  
 }
 
 // navigation bettwen sections
