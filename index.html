@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="./assets/main.css" />
     <link rel="stylesheet" href="./assets/style/bootstrap.min.css" />
     <link rel="stylesheet" href="./assets/style/owl.carousel.min.css" />
-    <link rel="stylesheet" href="./assets/style/owl.theme.default.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -35,7 +34,7 @@
     <div class="background">
       <div class="square">
         <div class="search">
-          <form class="home-search">
+          <form class="home-search" id="search-form">
             <input type="search" placeholder="ابحث عن منتوجك المفضل" />
           </form>
         </div>
@@ -89,7 +88,7 @@
       </div>
       <div class="list-of-prods">
         <div class="search">
-          <form class="all-home-search">
+          <form class="all-home-search" id="search-form">
             <input type="search" placeholder="ابحث عن منتوجك المفضل" />
           </form>
         </div>
@@ -248,35 +247,35 @@
       </div>
     </div>
 
-    <script src="./assets/theme.js"></script>
-    <script src="./assets/manage_data.js"></script>
-    <script src="./assets/scripts/bootstrap.min.js"></script>
+    <script src="./assets/app.js"></script>
+    <!-- <script src="./assets/scripts/bootstrap.min.js"></script> -->
+    <script src="./assets/scripts/bootstrap.bundle.min.js"></script>
     <script src="./assets/scripts/jquery-3.3.1.min.js"></script>
     <script src="./assets/scripts/owl.carousel.min.js"></script>
-    <script src="./assets/manage_data2.js"></script>
     <script>
-      //story slider
-      $(".slider").owlCarousel({
-        loop: true,
-        margin: 5,
-        nav: false,
-        dots: false,
-        // autoplay: true,
-        // autoplayTimeout: 3000,
-        // smartSpeed: 1000,
-        // autoplayHoverPause: true,
-        responsive: {
-          0: {
-            items: 2.5,
-          },
-          600: {
-            items: 4,
-          },
-          1000: {
-            items: 6,
-          },
-        },
-      });
+
+$(".slider").owlCarousel({
+    loop: true,
+    margin: 5,
+    nav: false,
+    dots: false,
+    autoplay: true,
+    autoplayTimeout: 3000,
+    smartSpeed: 1000,
+    autoplayHoverPause: true,
+    responsive: {
+      0: {
+        items: 2.5
+      },
+      600: {
+        items: 4
+      },
+      1000: {
+        items: 5.5
+      }
+    }
+  });
+            
     </script>
   </body>
 </html>
