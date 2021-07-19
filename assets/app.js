@@ -68,14 +68,23 @@ import("./data.js").then((res) => {
   });
 
   const more_btn = document.querySelectorAll(".more-btn");
-  more_btn.forEach(btn => {
+  more_btn.forEach((btn) => {
     btn.addEventListener("click", (e) => {
-      const button = e.target.parentElement.parentElement.querySelector('.add-fav')
+      const button =
+        e.target.parentElement.parentElement.querySelector(".more-actions");
       button.style.display = "block";
-      button.addEventListener('click' , add_to_favs)
+      button.addEventListener("click", (e) => {
+        const actions = e.srcElement.className;
+        switch (actions) {
+          case "add-fav":
+            add_to_favs(e);
+          case "close-section":
+            button.style.display = "none";
+        }
+      });
     });
-  })
-  
+  });
+
   // add products to shopping card
   const Add_to_card_btn = document.querySelector(".icon");
   Add_to_card_btn.addEventListener("click", add_to_card);
@@ -99,8 +108,8 @@ function see_details(e) {
   favs_list.style.display = "none";
   square.style.display = "none";
   order_section.style.display = "none";
-  const item_index =
-    e.target.parentElement.parentElement.getAttribute("data-id");
+  const item_index = e.target.parentElement.getAttribute("data-id");
+  console.log(item_index);
   data_item = list_prods[Number(item_index) - 1];
   display_section.querySelector("img").setAttribute("src", data_item.img);
   display_section.querySelector("h5.title").innerText = data_item.title;
@@ -109,7 +118,7 @@ function see_details(e) {
 
 // add products to favs list function
 function add_to_favs(btn) {
-  btn.target.style.display = "none"
+  btn.target.style.display = "none";
   const crd = btn.target.parentElement.parentElement.parentElement;
   const img = crd.querySelector("img.card-img-top").src;
   const title = crd.querySelector(".card-title").textContent;
@@ -134,12 +143,12 @@ function sweet_alert(data) {
     const bar = alert
       .querySelector(".progress-bar")
       .style.width.replace("%", "");
-    alert.querySelector(".progress-bar").style.width = Number(bar) + 2.5 + "%";
+    alert.querySelector(".progress-bar").style.width = Number(bar) + 4.5 + "%";
   }, 125);
   setTimeout(() => {
     alert.style.display = "none";
     clearInterval(interval);
-  }, 5000);
+  }, 3000);
 }
 
 // add product to shopping card function
@@ -183,17 +192,26 @@ function setData(data) {
           <div class="card" data-id="${data[i].id}">
             <div class="btns more-btn">
               <i class="fas fa-ellipsis-v"></i>
-            </div>
-            <div class="add-fav">
-              save
-            </div>
+            </div> 
+            <ul class="more-actions">
+              <li>
+                <div class="add-fav">
+                  حفظ
+                </div>
+              </li>
+              <li>
+                <div class="close-section">
+                  اغلاق
+                </div>
+              </li>
+            </ul>
             <img
-              class="card-img-top"
+              class="card-img-top see-item"
               src="${data[i].img}"
               loading="lazy"
             />
             <div class="card-body">
-              <h4 class="card-title see-item">${data[i].title}</h4>
+              <h4 class="card-title">${data[i].title}</h4>
               <p class="card-text">
               ${data[i].cat}<span class="prod-price">${data[i].price}</span>DH
               </p>
@@ -202,7 +220,6 @@ function setData(data) {
 
     cards_section.append(card);
   }
-  
 }
 
 // navigation bettwen sections
@@ -233,7 +250,8 @@ function go_to_order_page() {
     for (let i = 0; i < orders_data.length; i++) {
       const li_item = document.createElement("li");
       li_item.innerHTML = `
-          <span class="quantity">1</span>ps *
+          <span class="quantity">1</span>ps * ${orders_data[i].title} - 
+          <span class="size">size : ${orders_data[i].size}</span> -
           <span class="price">${orders_data[i].price}</span> DH 
       `;
       ul_list.append(li_item);
@@ -306,10 +324,22 @@ cats.forEach((cat) => {
       });
     });
 
-    const Add_to_favs_btns = document.querySelectorAll(".add-fv");
-    // add product to favourits list
-    Add_to_favs_btns.forEach((btn) => {
-      btn.addEventListener("click", add_to_favs);
+    const more_btn = document.querySelectorAll(".more-btn");
+    more_btn.forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        const button =
+          e.target.parentElement.parentElement.querySelector(".more-actions");
+        button.style.display = "block";
+        button.addEventListener("click", (e) => {
+          const actions = e.srcElement.className;
+          switch (actions) {
+            case "add-fav":
+              add_to_favs(e);
+            case "close-section":
+              button.style.display = "none";
+          }
+        });
+      });
     });
   });
 });

@@ -40,7 +40,9 @@ body {
     filter: drop-shadow(rgba(0, 0, 0, 0.267) 2px 2px 2px);
   }
   .nav {
-    height: 60px;
+    height: 80px;
+    padding-top: 20px;
+    background-color: white;
     bottom: 0px;
     position: fixed;
     width: 100%;
@@ -175,8 +177,10 @@ body {
   }
   .latest .cards {
     display: flex;
-    margin-top: 10px;
+    margin-top: -25px;
     justify-content: space-around;
+    width: 100%;
+    overflow-x: scroll;
   }
   .latest .card .card-body {
     padding: 10px 0px !important;
@@ -201,21 +205,21 @@ body {
     left: 8px;
     top: 27px;
   }
-  .add-fav {
+  .more-actions {
     display: none;
-    width:fit-content !important;
-    height: 30px;
-    padding: 5px;
-    justify-content: center;
-    color:#574f4c;
-    background: white;
-    border: 1px solid #574f4c !important;
     position: absolute;
-    top: 50px;
+    list-style: none;
+    top: 45px;
     left: 10px;
-    border-radius: 5px;
   }
-
+  .more-actions li {
+    border: 1px solid black;
+    background: white;
+    padding: 5px 10px;
+    margin-top: 5px;
+    text-align: center;
+  }
+  
   .card img {
     height: 60%;
   }
@@ -365,13 +369,20 @@ body {
     height: 100%;
     text-transform: uppercase;
     color: white;
-    background: #00000099;
+    /* background: #00000099; */
     border-radius: 10px;
     display: flex;
     align-items: center;
   }
   .texts h2 {
     font-weight: bolder;
+    font-size: 1rem;
+    background: #00000099;
+    padding: 10px;
+  }
+  .texts h6 {
+    background: #00000099;
+    padding: 10px;
   }
   .btn.btn-block {
     width: 100%;
@@ -415,7 +426,7 @@ body {
     height: 20px;
     position: absolute;
     z-index: 9;
-    top: 4px;
+    top: 20px;
     border-radius: 50%;
     display: flex;
     justify-content: center;

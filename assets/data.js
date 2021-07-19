@@ -6,7 +6,8 @@ export const Prods = [
     date: "18/06/2021 16:51",
     price: 35,
     cat: "cat2",
-    sex:"cat4"
+    sex:"cat4",
+    isNew: true
   },
   {
     id: 2,
@@ -15,7 +16,8 @@ export const Prods = [
     date: "18/06/2021 16:51",
     price: 30,
     cat: "cat1",
-    sex:"cat4"
+    sex:"cat4",
+    isNew: true
   },
   {
     id: 3,
@@ -24,7 +26,8 @@ export const Prods = [
     date: "18/06/2021 16:51",
     price: 45,
     cat: "cat2",
-    sex:"cat4"
+    sex:"cat4",
+    isNew: true
   },
   {
     id: 4,
