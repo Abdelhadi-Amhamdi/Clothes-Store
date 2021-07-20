@@ -123,6 +123,17 @@ body {
     top: 10px;
     line-height: 2;
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .search .logo img {
+    width: 50px;
+  }
+  .search form.home-search {
+    width: 80% !important;
+  }
+  form#search-form {
+    width: 100%;
   }
   .search svg {
     margin-top: -85px;
@@ -219,7 +230,7 @@ body {
     margin-top: 5px;
     text-align: center;
   }
-  
+
   .card img {
     height: 60%;
   }
