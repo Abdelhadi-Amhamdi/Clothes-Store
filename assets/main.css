@@ -6,8 +6,10 @@
   font-family: "Mada", sans-serif;
   color: #574f4c;
 }
+
 svg {
   fill: white;
+  width: 20px;
 }
 .hide {
   display: none;
@@ -16,6 +18,7 @@ svg {
 .nav {
   display: none !important;
 }
+
 body {
   display: flex;
   align-items: center;
@@ -125,12 +128,6 @@ body {
     width: 100%;
     display: flex;
     justify-content: space-between;
-  }
-  .search .logo img {
-    width: 57px;
-  }
-  .search form.home-search {
-    width: 80% !important;
   }
   form#search-form {
     width: 100%;
@@ -320,7 +317,6 @@ body {
     min-height: 100vh;
   }
   .list-of-prods .search {
-    top: 20px;
     width: 100%;
     margin-top: 0px;
     position: absolute;
